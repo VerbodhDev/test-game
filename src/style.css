@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply bg-space-black font-pixel;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+}
+
+@layer components {
+
+  /* Pixel-perfect borders */
+  .pixel-border {
+    border: 4px solid;
+    border-image: repeating-linear-gradient(90deg,
+        currentColor 0,
+        currentColor 4px,
+        transparent 4px,
+        transparent 8px) 4;
+  }
+
+  /* Retro glow effect */
+  .retro-glow {
+    text-shadow:
+      0 0 10px currentColor,
+      0 0 20px currentColor,
+      0 0 30px currentColor;
+  }
+
+  /* Heart icon styling */
+  .heart-icon {
+    display: inline-block;
+    color: #FF0000;
+    font-size: 1.5rem;
+    filter: drop-shadow(0 0 4px #FF0000);
+  }
+}
+
+@layer utilities {
+  .pixel-text {
+    image-rendering: pixelated;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
